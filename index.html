@@ -1,82 +1,149 @@
 <!DOCTYPE html>
 <html lang="es">
+
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
 <title>¿Quieres ir al cine conmigo? ❤️</title>
 
 <style>
-body{
+
+*{
     margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+
     font-family:Arial, Helvetica, sans-serif;
-    background:linear-gradient(135deg,#ffdde1,#ee9ca7);
+
+    background-image:
+    linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+    url("https://i.pinimg.com/736x/78/05/a5/7805a5b3ccb71636d512cd5ee3fc37e7.jpg");
+
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    background-attachment:fixed;
+
     display:flex;
     justify-content:center;
     align-items:center;
     height:100vh;
     overflow:hidden;
+
 }
 
 .caja{
-    background:white;
+
+    background: rgba(255,255,255,0.20);
+
+    backdrop-filter: blur(8px);
+    -webkit-backdrop-filter: blur(8px);
+
+    border:1px solid rgba(255,255,255,0.35);
+
+    width:520px;
+
     padding:40px;
-    border-radius:20px;
+
+    border-radius:25px;
+
     text-align:center;
-    width:500px;
-    box-shadow:0 10px 25px rgba(0,0,0,.2);
+
+    box-shadow:0 10px 30px rgba(0,0,0,.5);
+
 }
 
 h1{
+
     color:#ff4b6e;
+    margin-bottom:20px;
+
 }
 
 p{
-    font-size:20px;
+
     color:#444;
+
+    font-size:20px;
+
+    line-height:1.6;
+
+    margin-bottom:25px;
+
 }
 
-img{
-    width:220px;
-    border-radius:15px;
-    margin:20px 0;
+h2{
+
+    color:#ff4b6e;
+    margin-bottom:30px;
+
 }
 
 .botones{
+
     position:relative;
     height:150px;
+
 }
 
 button{
+
     padding:15px 30px;
-    font-size:18px;
+
     border:none;
+
     border-radius:12px;
+
+    font-size:18px;
+
     cursor:pointer;
+
     transition:.3s;
+
 }
 
 #si{
+
     background:#ff4b6e;
+
     color:white;
+
     margin-right:20px;
+
 }
 
 #si:hover{
-    transform:scale(1.08);
+
+    transform:scale(1.1);
+
 }
 
 #no{
+
     background:#666;
+
     color:white;
+
     position:absolute;
+
 }
 
 #talvez{
+
     background:#ffc107;
+
     color:black;
+
+    margin-left:20px;
+
 }
 
 </style>
+
 </head>
 
 <body>
@@ -85,26 +152,32 @@ button{
 
 <h1>❤️ Invitación Especial ❤️</h1>
 
-<img src="https://i.pinimg.com/736x/78/05/a5/7805a5b3ccb71636d512cd5ee3fc37e7.jpg"
-     alt="Toy Story 5"
-     width="250">
-
 <p>
-Hola mi Cosi ❤️<br><br>
 
-Quiero invitarte a ver <b>Toy Story 5</b> conmigo.
-,
-comemos palomitas 🍿 .
+Hola mi Cosi ❤️🥹<br><br>
+
+Quiero invitarte a ver <b>Toy Story 5</b> conmigo.<br><br>
+
+Prometo comprar las palomitas 🍿 y pasar una tarde muy bonita contigo.
+
 </p>
 
 <h2>¿Aceptas ir al cine conmigo? ❤️</h2>
 
 <div class="botones">
-<button id="si">Sí, acepto ❤️</button>
 
-<button id="no">No quiero 😢</button>
+<button id="si">
+Sí, acepto ❤️
+</button>
 
-<button id="talvez" style="margin-left:20px;">Tal vez 🤔</button>
+<button id="no">
+No quiero 😢
+</button>
+
+<button id="talvez">
+Tal vez 🤔
+</button>
+
 </div>
 
 </div>
@@ -112,6 +185,7 @@ comemos palomitas 🍿 .
 <script>
 
 let contador = 0;
+
 const botonNo = document.getElementById("no");
 
 botonNo.addEventListener("mouseover", mover);
@@ -122,11 +196,11 @@ function mover(){
 
         contador++;
 
-        const ancho = window.innerWidth - 150;
+        const ancho = window.innerWidth - 170;
         const alto = window.innerHeight - 100;
 
-        const x = Math.random() * ancho;
-        const y = Math.random() * alto;
+        const x = Math.random()*ancho;
+        const y = Math.random()*alto;
 
         botonNo.style.left = x + "px";
         botonNo.style.top = y + "px";
@@ -137,45 +211,84 @@ function mover(){
 
 document.getElementById("si").onclick=function(){
 
-    document.body.innerHTML=`
-    <div style="
-    display:flex;
-    justify-content:center;
-    align-items:center;
-    height:100vh;
-    background:linear-gradient(135deg,#ffdde1,#ee9ca7);
-    font-family:Arial;
-    text-align:center;">
+document.body.innerHTML=`
 
-    <div style="
-    background:white;
-    padding:40px;
-    border-radius:20px;
-    box-shadow:0 10px 20px rgba(0,0,0,.2);">
+<div style="
 
-    <h1 style="color:#ff4b6e;">¡¡Sabía que dirías que sí!! ❤️🥰</h1>
+height:100vh;
 
-    <h2>🍿 Nos vemos para disfrutar Toy Story 5 🎬</h2>
+display:flex;
 
-    <p>
-    Prometo comprar las palomitas 🍿,<br>
-    <br>
-    y ver una de mis peliculas favoritas. ❤️
-    </p>
+justify-content:center;
 
-    </div>
+align-items:center;
 
-    </div>
-    `;
+background-image:
+
+linear-gradient(rgba(0,0,0,.45),rgba(0,0,0,.45)),
+
+url('https://i.pinimg.com/736x/78/05/a5/7805a5b3ccb71636d512cd5ee3fc37e7.jpg');
+
+background-size:cover;
+
+background-position:center;
+
+font-family:Arial;
+
+">
+
+<div style="
+
+background:rgba(255,255,255,.93);
+
+padding:45px;
+
+border-radius:25px;
+
+text-align:center;
+
+box-shadow:0 10px 30px rgba(0,0,0,.4);
+
+">
+
+<h1 style="color:#ff4b6e;font-size:42px;">
+
+🥹❤️ ¡Sabía que aceptarías! ❤️🥹
+
+</h1>
+
+<h2>
+
+🍿 Nos vemos para disfrutar Toy Story 5 🎬
+
+</h2>
+
+<p style="font-size:22px;line-height:1.7;">
+
+Prometo comprar las palomitas 🍿<br><br>
+
+y ver una de mis películas favoritas contigo. ❤️<br><br>
+
+Te quiero muchísimo mi Cosi. 🥰❤️
+
+</p>
+
+</div>
+
+</div>
+
+`;
+
 }
 
 document.getElementById("talvez").onclick=function(){
 
-    alert("Piénsalo... no seas malucaaaaaa ❤️🥹");
+alert("🥺 Piénsalo... no seas malucaaaaaa ❤️");
 
 }
 
 </script>
 
 </body>
+
 </html>
